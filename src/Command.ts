@@ -136,30 +136,6 @@ class Command {
         this.decrementCooldowns(message.guild?.id, message.author.id)
       },
     })
-
-    if (!reply) {
-      return
-    }
-
-    if (typeof reply === 'string') {
-      message.reply({
-        content: reply,
-      })
-    } else if (typeof reply === 'object') {
-      if (reply.custom) {
-        message.reply(reply)
-      } else {
-        let embeds = []
-
-        if (Array.isArray(reply)) {
-          embeds = reply
-        } else {
-          embeds.push(reply)
-        }
-
-        message.reply({
-          embeds,
-        })
       }
     }
   }
